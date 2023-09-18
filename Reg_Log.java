@@ -23,7 +23,7 @@ public class Reg_Log {
             System.out.println("3) Exit");
 
             int option = read.nextInt();
-            read.nextLine(); // Consume the newline character left by nextInt()
+            read.nextLine();
 
             switch (option) {
 
@@ -129,8 +129,6 @@ public class Reg_Log {
 
                             String confirmPassword = read.nextLine() ;
 
-                            //if the pass is correct, it will automatically delete your profile and add a confirmation message 
-
                             if(confirmPassword.equals(pass))
                             {
                                 System.out.println("Are you sure you want to delete your profile?");
@@ -181,13 +179,13 @@ public class Reg_Log {
             System.out.println("1) Yes");
             System.out.println("2) No");
             int recoveryChoice = read.nextInt();
-            read.nextLine(); // Consume the newline character left by nextInt()
+            read.nextLine();
 
             if (recoveryChoice == 1) {
                 passwordRecoveryMode = true;
             } else {
                 System.out.println("Try Again Later.");
-                loginAttempts = 0; // Reset login attempts
+                loginAttempts = 0;
             }
         } else {
             System.out.println("Wrong Email Or Password!");
@@ -212,19 +210,17 @@ public class Reg_Log {
                 System.out.println("3) Connect to Another Account");
 
                 int recoveryOption = read.nextInt();
-                read.nextLine(); // Consume the newline character left by nextInt()
+                read.nextLine();
 
                 switch (recoveryOption) {
                     case 1:
                         System.out.print("Enter Your Phone Number : ");
                         String recoveryPhone = read.nextLine();
-                        // Implement recovery through phone logic here
                         System.out.println("Verification code sent to " + recoveryPhone);
                         break;
                     case 2:
                         System.out.print("Enter Your Email : ");
                         String recoveryEmail = read.nextLine();
-                        // Implement recovery through email logic here
                         System.out.println("Password reset link sent to " + recoveryEmail);
                         break;
                     case 3:
